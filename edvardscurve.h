@@ -1,0 +1,4 @@
+#ifndef EDVARDSCURVE_H
+#define EDVARDSCURVE_H
+
+#endif // EDVARDSCURVE_H
