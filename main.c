@@ -6,7 +6,7 @@
 
 int main()
 {
-
+    mont_init();
     mpz_t x, y, p, a, d, one, zero, k;
     mpz_init_set_str(k, "3F FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF"
                         "FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF"
@@ -42,17 +42,15 @@ int main()
     point_init_set(p1, x, y);
     point_init_set(p2, x, y);
     point_init(p3);
-    int i = 0;
-    while(++i!=100){
-        edvards_mult(crv, p3, k, p1);
-    }
+    edvards_mult(crv, p3, one, p1);
     gmp_printf("%Zd*\n(%Zd, %Zd)=\n (%Zd, %Zd)\n mod %Zd\n",
                k, p1->x, p1->y, p3->x, p3->y, p);
 
     edvards_clear(crv);
-    mpz_clears(x, y, p, NULL);
+    mpz_clears(x, y, p, one, zero, a, d, k, NULL);
     point_clear(p1);
     point_clear(p2);
     point_clear(p3);
+    mont_clear();
     return 0;
 }
