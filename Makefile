@@ -10,10 +10,10 @@ main.o: main.c
 	$(CC) $(OFLAGS) $(CCFLAGS) main.c -o main.o
 
 montarith.o: montarith.c
-	$(CC) $(CC) $(OFLAGS) $(CCFLAGS) montarith.c -o monarith.o
+	$(CC) $(OFLAGS) $(CCFLAGS) montarith.c -o montarith.o
 
 edvards.o: edvardscurve.c
-	$(CC) $(CC) $(OFLAGS) $(CCFLAGS) edvardscurve.c -o edvardscurve.o
+	$(CC) $(OFLAGS) $(CCFLAGS) edvardscurve.c -o edvardscurve.o
 
 clean:
 	rm -rf *.o $(TARGET)
