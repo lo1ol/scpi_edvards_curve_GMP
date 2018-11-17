@@ -60,7 +60,7 @@ void edvards_clear(edvards_curve_t curve)
     proj_point_clear(curve->temp_proj_point);
 }
 
-
+//сложение двух точек в афинном прдставлении на заданной кривой
 void edvards_add(edvards_curve_t curve, point_t result, srcpoint_t P, srcpoint_t Q)
 {
     proj_point_t proj_result, proj_P, proj_Q;
@@ -80,7 +80,7 @@ void edvards_add(edvards_curve_t curve, point_t result, srcpoint_t P, srcpoint_t
     proj_point_clear(proj_result);
 }
 
-
+//инициализация точек в афинном представлении
 void point_init(point_t result)
 {
     mpz_init(result->x);
